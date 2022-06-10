@@ -1,25 +1,32 @@
 # Final-Group-Project
 Rutgers Boot Camp group project
 
-  DATA SCI-VIZ FIRST SEGMENT PROPOSAL
-? John Curran, ? Michael Malamut, ? Vince LaVecchia, ?? Rudy Tresvalles
+## DATA SCI-VIZ FIRST SEGMENT PROPOSAL
+John Curran, Michael Malamut, Vince LaVecchia, Rudy Tresvalles
 
-PROPOSAL
+## PROPOSAL
 Determining the mean life expectancy rate for a country based on certain features and growth inhibitors.
 
-DATABASE MOCKUP
+## DATABASE MOCKUP
 
 
-GITHUB REPO
+## GITHUB REPO
 https://github.com/michaelmalamut/Final-Group-Project (repo name and link will be changed at a future date)
 
-MACHINE LEARNING MODEL
-DATASET
-World Bank API DatasetsDATA CLEANUP
-Obtaining relevant country and yearly infoALGORITHM
-Analyzing life expectancy against multiple factorsPREDICTION
-Life Expectancy Rate Output
-WORLDBANK DATASETS
+## MACHINE LEARNING MODEL
+### DATASET
+World Bank API Datasets
+
+### DATA CLEANUP
+Obtaining relevant country and yearly info
+
+### ALGORITHM
+Analyzing life expectancy against multiple factors
+
+### PREDICTION
+Life Expectancy Rate Output
+
+## WORLDBANK DATASETS
 Afghanistan to Cuba: https://data.worldbank.org/?locations=AF-AL-DZ-AS-AD-AO-AG-AR-AM-AW-AU-AT-AZ-BS-BH-BD-BB-BY-BE-BZ-BJ-BM-BT-BO-BA-BW-BR-VG-BN-BG-BF-BI-CV-KH-CA-KY-CF-TD-JG-CL-CN-CO-KM-CG-CD-CR-CI-HR-CU
 Curacao to Jordan:
 https://data.worldbank.org/?locations=CW-CY-CZ-DK-DJ-DM-DO-EC-EG-SV-GQ-ER-EE-SZ-ET-FO-FJ-FI-FR-PF-GA-GM-GE-DE-GH-GI-GR-GL-GD-GU-GT-GN-GW-GY-HT-HN-HK-HU-IS-IN-ID-IR-IQ-IE-IM-IL-IT-JM-JP-JO
