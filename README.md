@@ -8,6 +8,7 @@ John Curran, Michael Malamut, Vince LaVecchia, Rudy Tresvalles
 Determining the mean life expectancy rate for a country based on certain features and growth inhibitors.
 
 ## DATABASE MOCKUP
+![database_mockup](https://user-images.githubusercontent.com/97328622/173137861-e0658876-c653-4316-ba57-99cbcd52f648.png)
 
 
 ## GITHUB REPO
