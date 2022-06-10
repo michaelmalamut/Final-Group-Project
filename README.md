@@ -7,6 +7,7 @@
 | Rudy Tresvalles | Circle/Triangle ||||
 | Vince LaVecchia | Triangle ||||
 </br>
+
 ## Project Summary
 
 [TBD]
