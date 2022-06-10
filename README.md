@@ -8,8 +8,12 @@
 | Vince LaVecchia | Triangle ||||
 </br>
 ## Project Summary
+
 [TBD]
+
 ## Methodology
+
 [TBD]
+
 ## Supplements
 [TBD]
