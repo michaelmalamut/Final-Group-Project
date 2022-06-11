@@ -38,5 +38,9 @@ Kazakhstan to Pakistan: https://data.worldbank.org/?locations=KZ-KR-KP-KE-KW-KI-
 Palau to Zimbabwe:
 https://data.worldbank.org/?locations=PW-PA-PG-PY-PE-PH-PL-PT-PR-QA-RO-RU-RW-WS-SM-ST-SA-SN-RS-SC-SL-SG-SX-SK-SI-SB-SO-ZA-SS-ES-LK-KN-LC-MF-VC-SD-SR-SE-CH-SY-TJ-TZ-TH-TL-TG-TO-TT-TN-TM-TC-TV-UG-UA-AE-GB-US-UY-UZ-VU-VE-VN-VI-YE-ZM-ZW
 
+# Prior to Pre-Processing
 
+Prior to pre-processing data for PCA, several steps occurred:
 
+* Worldbank life expectnacy data was pulled in segments for all present features for a subset of all countries until all of the data for all countries was collected.  This was done due to limitations on the extract of data.
+* Data was combined into one file into one csv
