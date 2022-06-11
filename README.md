@@ -44,3 +44,13 @@ Prior to pre-processing data for PCA, several steps occurred:
 
 * Worldbank life expectnacy data was pulled in segments for all present features for a subset of all countries until all of the data for all countries was collected.  This was done due to limitations on the extract of data.
 * Data was combined into one file into one csv
+
+# Preprocessing the Data for PCA
+* Here we will need load, clean up, and scale the dataset
+* Current cleanup steps we can determine are:
+    * Remove features that do not apply to all countries
+    * Focus on a subset of more recent years (maybe from 2010) forward as data is more prevalent in those years
+    * Remove features that do not have hardy data
+    * Determine if we should rationalize certain features where data does not exist
+    * Group data by years then take the mean so that data is one value per feature
+
