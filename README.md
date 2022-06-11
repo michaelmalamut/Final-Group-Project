@@ -1,4 +1,4 @@
-# Projecting Life Expecntacy Rates - Final Group Project
+# Projecting Life Expectacy Rates - Final Group Project
 ## Members and Roles
 | Name | Week 1 | Week 2 | Week 3 | Week 4 |
 | --- |  --- | --- | --- | --- |
