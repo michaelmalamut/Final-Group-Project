@@ -21,7 +21,8 @@ CREATE TABLE worldbank_data (
 -- Should be over 3mil
 SELECT COUNT(*) FROM worldbank_data
 
-CREATE TABLE worldbank_data_process (
+CREATE TABLE worldbank_data_processed (
+    Country_Code VARCHAR(3) NOT NULL,
     "SP.RUR.TOTL.ZG" FLOAT, "SP.DYN.LE00.MA.IN" FLOAT, "SP.DYN.CDRT.IN" FLOAT,
     "SE.SEC.AGES" FLOAT, "TT.PRI.MRCH.XD.WD" FLOAT, "TM.VAL.MRCH.HI.ZS" FLOAT,
     "SP.URB.TOTL.IN.ZS" FLOAT, "SP.POP.TOTL" FLOAT, "NY.ADJ.AEDU.GN.ZS" FLOAT,
