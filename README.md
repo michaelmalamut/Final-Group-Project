@@ -9,14 +9,12 @@
 </br>
 
 ## Final Presentation
-The slides deck that accompanied our final presentation can be found ![here](https://docs.google.com/presentation/d/100R_4NxA1Hv28CinWRYU4MvfusqSZ3mnPtDEoqfejDk/edit?usp=sharing).
+The slides deck that accompanied our final presentation can be found [here](https://docs.google.com/presentation/d/100R_4NxA1Hv28CinWRYU4MvfusqSZ3mnPtDEoqfejDk/edit?usp=sharing).
 
 ## Project Summary
 [TBD]
 
-## Proposal
-Determining what factors can best predict a country's life expectancy rate; determining the mean life expectancy rate for a country based on certain features and growth inhibitors. 
-
+</br>
 
 # Methodology
 
@@ -39,8 +37,12 @@ Prior to pre-processing data for PCA, several steps occurred:
     * Remove features that do not have hardy data.
     * Rationalize certain features where data does not exist.
 
+</br>
+
 ## Creating the PCA
 [TBD]
+
+</br>
 
 ## Machine Learning Model
 Datasets: World Bank API Datasets
