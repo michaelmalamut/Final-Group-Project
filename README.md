@@ -24,7 +24,7 @@ Determining what factors can best predict a country's life expectancy rate; dete
 ### Database Mockup
 ![database_mockup](https://user-images.githubusercontent.com/97328622/173137861-e0658876-c653-4316-ba57-99cbcd52f648.png)
 Prior to pre-processing data for PCA, several steps occurred:
-* Worldbank life expectnacy data was pulled in segments for all present features for a subset of all countries until all of the data for all countries was collected.  This was done due to limitations on the extract of data.
+* Worldbank life expectancy data was pulled in segments for all present features for a subset of all countries until all of the data for all countries was collected.  This was done due to limitations on the extract of data.
 * Data was combined into one file into one csv
 
 ### Worldbank API Datasets
@@ -38,6 +38,9 @@ Prior to pre-processing data for PCA, several steps occurred:
     * Eliminate features that do not apply to all countries.
     * Remove features that do not have hardy data.
     * Rationalize certain features where data does not exist.
+
+## Creating the PCA
+[TBD]
 
 ## Machine Learning Model
 Datasets: World Bank API Datasets
