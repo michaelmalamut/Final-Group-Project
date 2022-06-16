@@ -2,11 +2,10 @@
 ## Members and Roles
 | Name | Week 1 | Week 2 | Week 3 | Week 4 |
 | --- |  --- | --- | --- | --- |
-| John Curran | Circle ||||
-| Michael Malamut | Square |||
-| Rudy Tresvalles | Circle/Triangle ||||
-| Vince LaVecchia | Triangle ||||
-</br>
+| John Curran | Circle | Circle |||
+| Michael Malamut | Square | Square ||
+| Rudy Tresvalles | Circle | Circle |||
+| Vince LaVecchia | Triangle | Triangle |||
 
 ## Final Presentation
 The slides deck that accompanied our final presentation can be found [here](https://docs.google.com/presentation/d/100R_4NxA1Hv28CinWRYU4MvfusqSZ3mnPtDEoqfejDk/edit?usp=sharing).
