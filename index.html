@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Life Expectancy</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css"/>
+</head>
+
+<body style="background-color:#A49E8D">
+  <!-- container-->
+  <div class="container">
+    <div class="row">
+      <!-- Jumbotron header-->
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Life Expectancy Dashboard</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well" style=" background-color: #B2E6D4 ">
+          <h5 style="font-size: 150%; color: #504136;">Country:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary" >
+          <div class="panel-heading" style=" background-color: #B2E6D4">
+            <h3 class="panel-title"; style="color: #504136">Download Feature Mapping</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-10"; style=" background-color: #689689">
+        <div id="bubble"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6"; style=" background-color: #689689 ">
+        <div id="bar"; style=" background-color: #689689 "></div>
+      </div>
+      <div class="col-md-6" style=" background-color: #689689 ">
+        <div id="gauge" ></div>
+      </div>
+    </div>
+  </div>
+
+  <body>
+    <p style="text-align:center;"><img src="../static/images/charts.PNG" alt="centered image" width="1250" height="400">
+        </p>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</body>
+
+</html>
