@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CSS stylings -->
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.code-ex {
+    width: auto;
+    background-color: rgb(220, 220, 220);
+    color: #000;
+    padding: 8px 12px;
+    border-left: 4px solid #68be6b;
+    word-wrap: break-word;
+    margin-top: 4px!important;
+    margin-bottom: 4px!important;
+    font-family: Consolas,Menlo,"courier new",monospace;
+    font-size: 12px
+}
+</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 3 Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Add Jumbotron to Header -->
+        <div class="jumbotron text-center">
+          <h1>Life-Expectancy Projections</h1>
+        </div>
+        <p><a href = https://github.com/michaelmalamut/Final-Group-Project target = "_self"> 
+            <img src = "static/images/github.png" alt = "Github Project Repository" width="15px" border = "0"/></a>
+            Project Members: John Curran, Michael Malamut, Rudy Tresvalles, and Vincent LaVecchia
+            </p>
+    </div>
+
+    <!-- Tab links -->
+     <!-- https://www.w3schools.com/howto/howto_js_tabs.asp -->
+    <div class="tab">
+        <button class="tablinks" onclick="viz(event, 'Intro')">Introduction</button>
+        <button class="tablinks" onclick="viz(event, 'ETLPP')">ETL/Pre-processing</button>
+        <button class="tablinks" onclick="viz(event, 'PCA')">PCA</button>
+        <button class="tablinks" onclick="viz(event, 'Lessons')">Lessons</button>
+    </div>
+    
+    <!-- Tab content -->
+    <div id="Intro" class="tabcontent">
+        <h3>Introduction</h3>
+        <p>For our group's project, we wanted to see what countries have been historically successful
+        at increasing its citizens' life expectancy year-over-year. We obtained our data from
+        the website, <span class="emphasized">"The World Bank."</span></p>
+        
+        
+        <p>The World Bank's Open Data website has global development data on all of the countries in the
+        world. Each country comes with a plethora of information and statistics about its citizens.
+        The data from the iFrame below is available to be downloaded to a create a CSV of the country's statistics</p>
+        <!-- https://www.w3schools.com/html/html_iframe.asp set all sizes to 800x400-->
+        <iframe src="https://data.worldbank.org/country/united-states" height="400" width="800"
+            title="World Bank Data Information for USA"></iframe>
+
+        <p>Total life expectancy year-over-year has increased considerably from a global perspective, but
+        some countries have been more successful at it than others. See the iFrame below to interact
+        and discover how life expectancy trends have evolved, or feel free to visit
+            <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2020&start=1960&view=chart&year=2020">
+                the webpage here.</a>
+        </p>
+        <iframe src="https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2020&locations=AW&start=1960&view=chart&year=2020" height="400" width="800"
+            title="World Bank Data Information for Life expectancy"></iframe>
+
+        <p>Naturally, one would think indicators like comparing a country's life exptancy to its GDP would be a
+        good metric, but just doing that and calling it done and dusted lacks nuance and context to what a particular
+        country could be doing well... every country is different, and how it increases its own GDP will be different
+        compared to other countries, so we needed to look at the bigger pictures.
+        </p>
+        <!--- https://help.tableau.com/current/pro/desktop/en-us/embed.htm -->
+    </div>
+
+    <div id="ETLPP" class="tabcontent">
+        <h3>ETL/Pre-processing</h3>
+        <p></p>
+        <p>After downloading all of the data, there were (understandably) a lot of rows of data to parse through.
+        For the ETL and Pre-processing phase, we had to combine 213 different countries' CSV files to create a
+        masterlist list of information that would then be converted into a Pandas Dataframe for analysis. Between
+        all of the CSVS, there was a total of over 3,000,000 million entries for the countries we imported into our
+        PostgreSQL database through pgAdmin 4.</p>
+        <!-- Insert screenshot from SQL -->
+
+        <p>The master database was then converted into another invidual country's CSV so that the data can be properly
+        read. The CSV's were currently set-up with years across the top instead of feature indicators, and that would
+        pose problems in the future; an algorithm was used to transpose all of the matrices and recreate the per-country
+        CSV files. The years 1960 to 1999 were also dropped to only utilize relevant data and to have our model learn
+        from the most up-to-date indicators.
+        </p>
+
+        <div class="code-ex">
+            # Per-country .csv generation loop<br>
+            for country in country_codes:<br><br>
+
+            &emsp;# Create per-country dataframe<br>
+            &emsp;&emsp;df1 = df.loc[df['country_code'] == country]<br><br>
+
+            &emsp;&emsp;# Drop unnecessary columns<br>
+            &emsp;&emsp;df1.drop('country_name', axis=1, inplace=True)<br>
+            &emsp;&emsp;df1.drop('country_code', axis=1, inplace=True)<br>
+            &emsp;&emsp;df1.drop('indicator_name', axis=1, inplace=True)<br><br>
+
+            &emsp;&emsp;# Retain index pre-transposing<br>
+            &emsp;&emsp;df1.set_index('indicator_code', inplace=True)<br><br>
+
+            &emsp;&emsp;# Transpose matrix (rows are now years)<br>
+            &emsp;&emsp;dfT = df1.T<br><br>
+
+            &emsp;&emsp;# Drop 1960 to 1999<br>
+            &emsp;&emsp;for year in years:<br>
+            &emsp;&emsp;&emsp;<span class="indent"></span>dfT = dfT.drop(year, axis=0)<br><br>
+
+            &emsp;&emsp;# Export per-country .csv<br>
+            &emsp;&emsp;dfT.to_csv('Countries/' + country + '.csv')
+        </div>
+
+        <p>Afterwards, more processing was done on the per-country CSVs to select features that had at least 90%
+        of their data, i.e. had at least 9 years worth of information. Features that were missing more than 1 year
+        of data was dropped, and the missing year would be later imputed using sk-learn.</p>
+
+        <div class="code-ex">
+            # Process country.csv and eliminate empty data<br>
+            for country in country_codes:<br>
+            &emsp;df = pd.read_csv('Countries/' + country + '.csv')<br><br>
+
+            &emsp;# Replace NaN with str for readability<br>
+            &emsp;df.fillna('BLANK', inplace=True)<br><br>
+
+            &emsp;indicators = df.columns<br><br>
+
+            &emsp;for indicator in indicators:<br>
+            &emsp;&emsp;blank_count = (df[indicator].value_counts(dropna=False)).to_dict()<br><br>
+
+            &emsp;&emsp;# Count str to retain columns with 90% data points<br>
+            &emsp;&emsp;if 'BLANK' in blank_count:<br>
+            &emsp;&emsp;&emsp;if blank_count["BLANK"] > 2:<br>
+            &emsp;&emsp;&emsp;&emsp;df.drop(indicator, axis=1, inplace=True)<br>
+            &emsp;&emsp;&emsp;else:<br>
+            &emsp;&emsp;&emsp;&emsp;pass<br>
+            &emsp;&emsp;else:<br>
+            &emsp;&emsp;&emsp;pass<br><br>
+
+            &emsp;# Replace str with NaN to calculate means<br>
+            &emsp;df.replace ('BLANK', np.nan, inplace=True)<br>
+            &emsp;df = df.mean(skipna=True).to_frame().T<br>
+            &emsp;df.drop('Unnamed: 0', axis=1, inplace=True)<br>
+            &emsp;df.rename(index={0: country}, inplace=True)<br>
+            &emsp;df.to_csv('Countries_adjusted/' + country + '.csv')<br>
+        </div>
+
+        <p>After processing all of the CSVs and parsing through the data, only retaining usable features, the
+        individual countries' information was collected into a dataframe, and exported out into another CSV to be
+        used for our PCA calculation.</p>
+
+        <div class="code-ex">
+            # Utilize same algorithm to process master list<br>
+            df.fillna('BLANK', inplace=True)<br><br>
+
+            indicator_codes = df.columns<br><br>
+
+            for indicator in indicator_codes:<br>
+            &emsp;blank_count = (df[indicator].value_counts(dropna=False)).to_dict()<br><br>
+
+            &emsp;# Still retaining 90% data points<br>
+            &emsp;if 'BLANK' in blank_count:<br>
+            &emsp;&emsp;if blank_count["BLANK"] > 21:<br>
+            &emsp;&emsp;&emsp;df.drop(indicator, axis=1, inplace=True)<br>
+            &emsp;&emsp;else:<br>
+            &emsp;&emsp;&emsp;pass<br>
+            &emsp;else:<br>
+            &emsp;&emsp;pass<br><br>
+
+            df.replace ('BLANK', np.nan, inplace=True)<br>
+            df.to_csv('Resources/worldbank_data.csv')
+        </div>
+    </div>
+    
+    <div id="PCA" class="tabcontent">
+        <h3>Principle Component Analysis</h3>
+        <p>Externally, our master CSV with features and countries was transposed so now each country was a column
+        in the header row and each feature was a row. The CSV was then imported into Pandas dataframe for further
+        processing and manipulation</p>
+        <!-- Insert head() of worldbank_data.csv df -->
+
+        <p>sk-learn was used to impute the missing NaN values from the dataframe; this was done to ensure the
+        analysis did not have any problems analyzing trends of each feature from country-to-country.</p>
+
+        <div class="code-ex">
+            # Impute NaN values using SKlearn Imputer<br>
+            imputer = SimpleImputer(strategy='mean', missing_values=np.nan)<br>
+            imputer = imputer.fit(worldbank_df[[countries]])<br>
+            worldbank_df[[countries]] = imputer.transform(worldbank_df[[countries]])
+        </div>
+
+        <p>The dataframe was then standardized using StandardScaler(), and PCA was performed using three
+        principle components. Reducing the data gave us the following output:</p>
+
+        <div class="code-ex">
+            [0.77256764 0.12608949 0.04804051]
+        </div>
+
+        <p>Which told us that of the features examined, over 77% of features at any given time were of a relevant class...
+        this is an important note that will be brought up again later. But for now, we used K-means clustering to confirm
+        what our PCA was telling us, and it seemed to hold.</p>
+        <!-- Insert K-means elbow curve -->
+
+        <p>We then made a merged dataframe to see which class each feature was given, and we saw that an overwhelming
+        majority were given Class 1. This is also visually evidenced by the large amount of features clustered into one
+        section of our 3D scatter that we generated with the merged dataframe.</p>
+        <!-- Insert 3D scatter cluster -->
+    </div>
+    
+    <div id="Lessons" class="tabcontent">
+        <h3>Lessons and Learnings</h3>
+        <p>Insert text here.</p>
+    </div>
+  
+    <!-- Javascript functions -->
+  <script>
+    function viz(evt, step) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(step).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    </script>
+</body>
+</html>
