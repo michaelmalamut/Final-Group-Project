@@ -1,0 +1,16 @@
+.jumbotron {
+    background-image: url("../images/aging.PNG");
+    background-size: 100% 100%;
+    text-align: center;
+    opacity: 0.95;
+    color: aliceblue;
+    font-size: 14px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+    }
+    
+    .panel{
+    background-color: #689689;
+    color: #504136;
+    object-fit: contain;
+    }
