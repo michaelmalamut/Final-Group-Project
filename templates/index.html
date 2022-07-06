@@ -76,6 +76,7 @@ body {font-family: Arial;}
     <!-- Tab links -->
      <!-- https://www.w3schools.com/howto/howto_js_tabs.asp -->
     <div class="tab">
+        <button class="tablinks" onclick="viz(event, 'Tools')">Tools Used</button>
         <button class="tablinks" onclick="viz(event, 'Intro')">Introduction</button>
         <button class="tablinks" onclick="viz(event, 'ETLPP')">ETL/Pre-processing</button>
         <button class="tablinks" onclick="viz(event, 'PCA')">PCA</button>
@@ -83,36 +84,52 @@ body {font-family: Arial;}
     </div>
     
     <!-- Tab content -->
+    <div id="Tools" class="tabcontent">
+        <p>The tools we used in this project are listed below.</p>
+        <p>For data cleanup and pre-processing, we used:</p>
+        <ul>
+            <li>SQL</lli>
+            <li>Pandas</li>
+            <li>Numpy</li>
+        </ul>
+        <p>For our principle component analysis and our machine learning model, we used (in addition to above) Scikit-learn's modules:</p>
+        <ul>
+            <li>SimpleImputer</li>
+            <li>StandardScaler</li>
+            <li>MinMaxScaler</li>
+            <li>PCA</li>
+            <li>Kmeans</li>
+        </ul>
+        <p>For our visualizations, we used:
+            <ul>
+                <li>Tableau Public</li>
+                <li>Plotly Express</li>
+                <li>Hvplot</li>
+            </ul>
+        </p>
+    </div>
+
     <div id="Intro" class="tabcontent">
         <h3>Introduction</h3>
         <p>For our group's project, we wanted to see what countries have been historically successful
         at increasing its citizens' life expectancy year-over-year. We obtained our data from
         the website, <span class="emphasized">"The World Bank."</span></p>
         
-        
         <p>The World Bank's Open Data website has global development data on all of the countries in the
         world. Each country comes with a plethora of information and statistics about its citizens.
-        The data from the iFrame below is available to be downloaded to a create a CSV of the country's statistics</p>
-        <!-- https://www.w3schools.com/html/html_iframe.asp set all sizes to 800x400-->
-        <iframe src="https://data.worldbank.org/country/united-states" height="400" width="800"
-            title="World Bank Data Information for USA"></iframe>
-
-        <p>Total life expectancy year-over-year has increased considerably from a global perspective, but
-        some countries have been more successful at it than others. See the iFrame below to interact
-        and discover how life expectancy trends have evolved, or feel free to visit
+        The data from the iFrame below is available to be downloaded to a create a CSV of the country's statistics.
+        Total life expectancy year-over-year has increased considerably from a global perspective, but
+        some countries have been more successful at it than others. Discover how life expectancy trends have evolved
+        by visiting
             <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2020&start=1960&view=chart&year=2020">
                 the webpage here.</a>
-        </p>
-        <iframe src="https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2020&locations=AW&start=1960&view=chart&year=2020" height="400" width="800"
-            title="World Bank Data Information for Life expectancy"></iframe>
 
         <p>Naturally, one would think indicators like comparing a country's life exptancy to its GDP would be a
         good metric, but just doing that and calling it done and dusted lacks nuance and context to what a particular
         country could be doing well... every country is different, and how it increases its own GDP will be different
-        compared to other countries, so we needed to look at the bigger pictures.
-        </p>
-        <div class='tableauPlaceholder' id='viz1657063121681' style='position: relative'><noscript><a href='#'><img alt='Life Expectancy VS GDP ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fi&#47;Finalproject_16570630346710&#47;LifeExpectancyVSGDP&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Finalproject_16570630346710&#47;LifeExpectancyVSGDP' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fi&#47;Finalproject_16570630346710&#47;LifeExpectancyVSGDP&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1657063121681');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        compared to other countries, so we needed to look at the bigger pictures.</p>
         <!--- https://help.tableau.com/current/pro/desktop/en-us/embed.htm -->
+        <div class='tableauPlaceholder' id='viz1657063121681' style='position: relative'><noscript><a href='#'><img alt='Life Expectancy VS GDP ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fi&#47;Finalproject_16570630346710&#47;LifeExpectancyVSGDP&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Finalproject_16570630346710&#47;LifeExpectancyVSGDP' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fi&#47;Finalproject_16570630346710&#47;LifeExpectancyVSGDP&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1657063121681');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
     </div>
 
     <div id="ETLPP" class="tabcontent">
@@ -121,9 +138,9 @@ body {font-family: Arial;}
         <p>After downloading all of the data, there were (understandably) a lot of rows of data to parse through.
         For the ETL and Pre-processing phase, we had to combine 213 different countries' CSV files to create a
         masterlist list of information that would then be converted into a Pandas Dataframe for analysis. Between
-        all of the CSVS, there was a total of over 3,000,000 million entries for the countries we imported into our
+        all of the CSVS, there was a total of over 300,000 entries for the countries we imported into our
         PostgreSQL database through pgAdmin 4.</p>
-        <!-- Insert screenshot from SQL -->
+        <img src = "static/images/sql_query.png" alt = "pgAdmin 4 Database Query"><br>
 
         <p>The master database was then converted into another invidual country's CSV so that the data can be properly
         read. The CSV's were currently set-up with years across the top instead of feature indicators, and that would
@@ -131,7 +148,6 @@ body {font-family: Arial;}
         CSV files. The years 1960 to 1999 were also dropped to only utilize relevant data and to have our model learn
         from the most up-to-date indicators.
         </p>
-
         <div class="code-ex">
             # Per-country .csv generation loop<br>
             for country in country_codes:<br><br>
@@ -156,12 +172,11 @@ body {font-family: Arial;}
 
             &emsp;&emsp;# Export per-country .csv<br>
             &emsp;&emsp;dfT.to_csv('Countries/' + country + '.csv')
-        </div>
+        </div><br>
 
         <p>Afterwards, more processing was done on the per-country CSVs to select features that had at least 90%
         of their data, i.e. had at least 9 years worth of information. Features that were missing more than 1 year
         of data was dropped, and the missing year would be later imputed using sk-learn.</p>
-
         <div class="code-ex">
             # Process country.csv and eliminate empty data<br>
             for country in country_codes:<br>
@@ -190,12 +205,11 @@ body {font-family: Arial;}
             &emsp;df.drop('Unnamed: 0', axis=1, inplace=True)<br>
             &emsp;df.rename(index={0: country}, inplace=True)<br>
             &emsp;df.to_csv('Countries_adjusted/' + country + '.csv')<br>
-        </div>
+        </div><br>
 
         <p>After processing all of the CSVs and parsing through the data, only retaining usable features, the
         individual countries' information was collected into a dataframe, and exported out into another CSV to be
         used for our PCA calculation.</p>
-
         <div class="code-ex">
             # Utilize same algorithm to process master list<br>
             df.fillna('BLANK', inplace=True)<br><br>
@@ -224,40 +238,60 @@ body {font-family: Arial;}
         <p>Externally, our master CSV with features and countries was transposed so now each country was a column
         in the header row and each feature was a row. The CSV was then imported into Pandas dataframe for further
         processing and manipulation</p>
-        <!-- Insert head() of worldbank_data.csv df -->
+        {% block content1 %}
+        {{data1 | safe}}
+        {% endblock %}<br>
 
         <p>sk-learn was used to impute the missing NaN values from the dataframe; this was done to ensure the
         analysis did not have any problems analyzing trends of each feature from country-to-country.</p>
-
         <div class="code-ex">
             # Impute NaN values using SKlearn Imputer<br>
             imputer = SimpleImputer(strategy='mean', missing_values=np.nan)<br>
             imputer = imputer.fit(worldbank_df[[countries]])<br>
             worldbank_df[[countries]] = imputer.transform(worldbank_df[[countries]])
         </div>
+        {% block content2 %}
+        {{data2 | safe}}
+        {% endblock %}<br>
 
         <p>The dataframe was then standardized using StandardScaler(), and PCA was performed using three
         principle components. Reducing the data gave us the following output:</p>
-
         <div class="code-ex">
             [0.77256764 0.12608949 0.04804051]
-        </div>
+        </div><br>
 
         <p>Which told us that of the features examined, over 77% of features at any given time were of a relevant class...
         this is an important note that will be brought up again later. But for now, we used K-means clustering to confirm
         what our PCA was telling us, and it seemed to hold.</p>
-        <!-- Insert K-means elbow curve -->
+        <img src = "static/images/K-means.png" alt = "K-means Elbow Curve"><br>
 
         <p>We then made a merged dataframe to see which class each feature was given, and we saw that an overwhelming
-        majority were given Class 1. This is also visually evidenced by the large amount of features clustered into one
-        section of our 3D scatter that we generated with the merged dataframe.</p>
-        <!-- Insert 3D scatter cluster -->
+        majority were given Class 3. This is also visually evidenced by the large amount of features clustered into one
+        section of our 2D scatters that we generated with the merged dataframe.</p>
+        <img src = "static/images/classes.png" alt = "Classes Distribution Total">
+        <img src = "static/images/rus_usa.png" alt = "K-scatter of Russia versus the United States">
+        <img src = "static/images/ukr_usa.png" alt = "K-scatter of Ukraine versus the United States">
+        <img src = "static/images/bra_can.png" alt = "K-scatter of Canada versus Brazil">
     </div>
     
     <!-- Type up our reflections-->
     <div id="Lessons" class="tabcontent">
         <h3>Lessons and Learnings</h3>
-        <p>Insert text here.</p>
+        <p>For the future, we realize our pre-processing methods and model devlopment could benefit from a lot of tweaks.
+        Initially when we created the master dataframe, we had omitted the years 1960 to 1999 to only use relevant data;
+        our PCA and model development could benefit from a larger pool of history to analyze trends across the years.
+        Additionally we also constrained features to have at least 90% yearly completion, but that eliminated over 1,000
+        features from our analysis; starting off with 1,445 features in our master dataframe and then coming down to only
+        48, we saw a decrease of 97% of potentially usable data.</p>
+        <p>This compounded later on when we ran our PCA and K-means clustering. As previously mentioned, our PCA was confident
+        in predicting a 77% relevancy across the 48 features that remained, which was then evident in Class 3 containing 93%
+        of the featureset in its grouping; this was consistent across country comparisons as well. If we were to increase the sample
+        sizing of our dataset by either adjusting yearly history or decreasing acceptable data tolerance, we could potentially
+        see a lot more variance in our PCA confidence as well as K-mean clustering. This would also give us a better indicator
+        of which features are most relevant to life expectancy projection, rather than just simply having an overwhelming majority
+        be represented; something like 
+        <a href="https://data.worldbank.org/indicator/AG.LND.FRST.K2?end=2020&start=1960&view=chart&year=2020">
+            AG.LND.FRST.K2</a> might be better considered in future model development.</p>
     </div>
   
     <!-- Javascript functions -->
