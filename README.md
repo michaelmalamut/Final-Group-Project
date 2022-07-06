@@ -7,8 +7,5 @@
 | Rudy Tresvalles | Circle | Circle | Visualizations | Visualizations |
 | Vince LaVecchia | Triangle | Triangle | Triangle | Visualizations |
 
-## Final Presentation
-The slides deck that accompanied our final presentation can be found [here](https://docs.google.com/presentation/d/100R_4NxA1Hv28CinWRYU4MvfusqSZ3mnPtDEoqfejDk/edit?usp=sharing).
-
-## Project Summary
-[TBD]
+## Project Summary and Presentation
+Our presentation and dashboard can be viewable as a Flask app run locally on your system. Feel free to fork this repo to view our work.
